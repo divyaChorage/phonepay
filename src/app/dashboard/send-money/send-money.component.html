@@ -1,0 +1,50 @@
+<div class="send-money-container">
+    <h2>Send Money</h2>
+
+    <!-- Input for the sender's UPI -->
+    <div class="form-group">
+        <label for="senderupi">Sender UPI:</label>
+        <input type="text" id="senderupi" [(ngModel)]="senderupi" class="input-field" />
+    </div>
+    
+    <!-- Input for sender's account number -->
+    <div class="form-group">
+        <label for="senderAccount">Sender Account:</label>
+        <input type="number" id="senderAccount" [(ngModel)]="senderAccount" class="input-field" />
+    </div>
+    
+    <!-- Input for sender's mobile number -->
+    <div class="form-group">
+        <label for="senderMobile">Sender Mobile Number:</label>
+        <input type="number" id="senderMobile" [(ngModel)]="senderMobile" class="input-field" />
+    </div>
+
+    <p class="to-label">To</p>
+
+    <!-- Input for recipient's mobile number -->
+    <div class="form-group">
+        <label for="receiverMobileNo">Recipient Mobile Number:</label>
+        <input type="number" id="receiverMobileNo" [(ngModel)]="receiverMobileNo" class="input-field" (ngModelChange)="validaterecipientDetails()" />
+    </div>
+
+    <!-- Input for recipient's name -->
+    <div class="form-group">
+        <label for="receiverName">Recipient Name:</label>
+        <input type="text" id="receiverName" [(ngModel)]="receiverName" class="input-field" (ngModelChange)="validaterecipientDetails()" />
+    </div>
+
+    <!-- Auto-populated recipient account number -->
+    <div class="form-group">
+        <label for="receiveraccountNumber">Recipient Account Number:</label>
+        <input type="number" id="receiveraccountNumber" [(ngModel)]="receiveraccountNumber" class="input-field" readonly />
+    </div>
+
+    <!-- Input for the amount to pay -->
+    <div class="form-group">
+        <label for="amountToPay">Enter Amount:</label>
+        <input type="number" id="amountToPay" [(ngModel)]="amountToPay" class="input-field" />
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="submit-btn" (click)="sendMoney()">Send Money</button>
+</div>

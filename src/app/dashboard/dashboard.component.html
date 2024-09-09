@@ -1,0 +1,30 @@
+<nav *ngIf="show !== 4" class="navbar">
+  <div class="navbar-buttons">
+    <button (click)="whatToShow(0)" class="nav-btn">Profile</button>
+    <button (click)="whatToShow(2)" class="nav-btn">Send Money</button>
+    <button (click)="whatToShow(1)" class="nav-btn">Link Account</button>
+    <button (click)="whatToShow(3)" class="nav-btn">Check History</button>
+    <button (click)="logout()" class="nav-btn">Logout</button>
+  </div>
+</nav>
+
+
+
+<!-- Main content container -->
+<div class="main-content">
+  <div *ngIf="show === 0">
+    <app-profile></app-profile>
+  </div>
+  <div *ngIf="show === 1">
+    <app-link-account></app-link-account>
+  </div>
+  <div *ngIf="show === 2">
+    <app-send-money></app-send-money>
+  </div>
+  <div *ngIf="show === 3">
+    <app-history></app-history>
+  </div>
+  <div *ngIf="show === 4">
+    <app-login></app-login>
+  </div>
+</div>
