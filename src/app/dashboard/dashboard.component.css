@@ -1,0 +1,75 @@
+/* General styling for the navbar */
+.navbar {
+  background-color: #2a2a72;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Styling for Profile Button */
+.profile-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 50px; /* Same size as the profile image */
+  height: 50px;
+  padding: 0;
+}
+
+/* Profile Icon Image Styling */
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Make the image round */
+  object-fit: cover; /* Ensure the image covers the entire area */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for Profile Icon */
+.profile-btn:hover .profile-icon {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* More attractive button styling */
+.nav-btn {
+  background: linear-gradient(45deg, #cfb8b8, #e3bfc6);
+  color: rgb(27, 6, 6);
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #c8c0c2, #ece5e5);
+}
+
+/* Ensure the main content area is pushed to the right of the navbar */
+.main-content {
+  margin-left: 220px; /* Adjust based on the navbar's width (200px + 20px padding) */
+  padding: 20px; /* Add padding for spacing */
+}
+

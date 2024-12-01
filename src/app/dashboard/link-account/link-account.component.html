@@ -1,0 +1,51 @@
+
+ <p>Linked Accounts</p>
+ <div class="container">
+   <table border="1">
+     <tr>
+       <th>S No</th>
+       <th>IFSC</th>
+       <th>Account No</th>
+       <th>Action</th>
+     </tr>
+     <tr *ngFor="let item of list1; let i = index">
+       <td>{{i + 1}}</td>
+       <td>{{item.ifsccode}}</td>
+       <td>{{item.accountno}}</td>
+       <td><button (click)="unLink(item.id)">Unlink Account</button></td>
+     </tr>
+   </table>
+ </div>
+ 
+ <p>Non-linked Bank Accounts</p>
+ <div class="container">
+   <table border="1">
+     <tr>
+       <th>S No</th>
+       <th>IFSC</th>
+       <th>Account No</th>
+       <th>Action</th>
+     </tr>
+     <ng-container *ngFor="let item of list; let i = index">
+       <tr>
+         <td>{{i + 1}}</td>
+         <td>{{item.ifsccode}}</td>
+         <td>{{item.accountno}}</td>
+         <td><button (click)="linkaccount(item.id)">Link</button></td>
+       </tr>
+       <tr *ngIf="item.show === 1">
+         <td colspan="4"><input type="number" placeholder="Enter PIN" [(ngModel)]="pin"></td>
+       </tr>
+       <tr *ngIf="item.show === 1">
+         <td colspan="4"><input type="text" placeholder="Enter UPI" [(ngModel)]="upi"></td>
+       </tr>
+       <tr *ngIf="item.show === 1">
+         <td colspan="4"><input type="number" placeholder="Enter OTP" [(ngModel)]="otp"></td>
+       </tr>
+       <tr *ngIf="item.show === 1">
+         <td colspan="4"><button (click)="submitLinking()">Submit</button></td>
+       </tr>
+     </ng-container>
+   </table>
+ </div>
+ 

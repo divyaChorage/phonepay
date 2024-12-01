@@ -1,0 +1,16 @@
+<div>
+    <h2>Your Transaction History</h2>
+    <div *ngIf="transactionHistory.length > 0; else noTransactions">
+        <div *ngFor="let transaction of transactionHistory" class="transaction-box">
+            <p><strong>To:</strong> {{transaction.receiverName || 'N/A'}}</p>
+            <p><strong>Amount:</strong> {{transaction.amount || 'N/A'}}</p>
+            <p><strong>Date:</strong> {{transaction.date | date:'medium'}}</p>
+            <p><strong>Status:</strong> {{transaction.crDb === 'db' ? 'Debited' : 'Credited'}}</p>
+            <p><strong>your Previous Balance:</strong> {{transaction.senderPreviousBal || 'N/A'}}</p>
+            <p><strong>your Current Balance:</strong> {{transaction.senderNowBal || 'N/A'}}</p>
+        </div>
+    </div>
+    <ng-template #noTransactions>
+        <p>No transactions found.</p>
+    </ng-template>
+</div>

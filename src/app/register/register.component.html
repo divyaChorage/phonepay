@@ -1,0 +1,32 @@
+<p class="message">Register works!</p>
+
+<div class="form-container">
+    <label for="mobile" class="form-label">Enter Mobile Number:</label>
+    <input type="number" id="mobile" [(ngModel)]="number" class="form-input">
+
+    <label for="email" class="form-label">Enter emai :</label>
+
+    <input id="email" type="text" [(ngModel)]="email">
+
+
+
+    <div *ngIf="showOtp == 0" class="button-group">
+        <button (click)="register()" class="btn primary-btn">Register</button>
+    </div>
+
+    <div *ngIf="showOtp == 1" class="otp-container">
+        <label for="otp" class="form-label">Enter OTP:</label>
+        <input type="number" id="otp" [(ngModel)]="otp" class="form-input">
+        <button (click)="verifyOtp()" class="btn primary-btn">Verify OTP</button>
+    </div>
+
+    <div *ngIf="showOtp == 2" class="pin-container">
+        <label for="pin" class="form-label">Enter Pin:</label>
+        <input type="number" id="pin" [(ngModel)]="pin" class="form-input">
+        
+        <label for="pin2" class="form-label">Confirm Pin:</label>
+        <input type="number" id="pin2" [(ngModel)]="pin2" class="form-input">
+        
+        <button (click)="set()" class="btn primary-btn">Set Pin</button>
+    </div>
+</div>
